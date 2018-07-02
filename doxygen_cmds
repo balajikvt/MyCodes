@@ -1,0 +1,177 @@
+STEPS:
+* Create a configuration file  
+  doxygen -g <config-file>
+* Customize the configuration file
+  vi <config-file>
+* Build documentation
+  doxygen <config-file>
+
+SYNTAX:
+/*!< ... */ : Documentation after members
+/**< ...    : Equivalent to above 
+     ...
+ */
+  
+SAMPLE DOXYGEN COMMENTS:
+<------------------------From lpc17xx_uart.h----------------------------------->
+/**********************************************************************
+* $Id$		lpc17xx_uart.h				2010-06-18
+*//**
+* @file		lpc17xx_uart.h
+* @brief	Contains all macro definitions and function prototypes
+* 			support for UART firmware library on LPC17xx
+* @version	3.0
+* @date		18. June. 2010
+* @author	NXP MCU SW Application Team
+*
+* Copyright(C) 2010, NXP Semiconductor
+* All rights reserved.
+*
+***********************************************************************
+* Software that is described herein is for illustrative purposes only
+* which provides customers with programming information regarding the
+* products. This software is supplied "AS IS" without any warranties.
+* NXP Semiconductors assumes no responsibility or liability for the
+* use of the software, conveys no license or title under any patent,
+* copyright, or mask work right to the product. NXP Semiconductors
+* reserves the right to make changes in the software without
+* notification. NXP Semiconductors also make no representation or
+* warranty that such application will be suitable for the specified
+* use without further testing or modification.
+**********************************************************************/
+
+    /** @defgroup UART UART (Universal Asynchronous Receiver/Transmitter)
+     * @ingroup LPC1700CMSIS_FwLib_Drivers
+     * @{
+     */
+
+    #ifdef __cplusplus
+    extern "C"
+    {
+    #endif
+    
+        /** @defgroup UART_Public_Macros  UART Public Macros
+         * @{
+         */
+         
+              /** UART time-out definitions in case of using Read() and Write function
+               * with Blocking Flag mode
+               */
+              #define UART_BLOCKING_TIMEOUT	(0xFFFFFFFFUL)
+
+        /**
+         * @}
+         */
+
+        /** @defgroup UART_Private_Macros UART Private Macros
+         * @{
+         */
+
+              /* Accepted Error baud rate value (in percent unit) */
+              #define UART_ACCEPTED_BAUDRATE_ERROR	(3) /*!< Acceptable UART baudrate error */
+        
+        
+        /**
+         * @}
+         */
+
+        /** @defgroup UART_Public_Types UART Public Types
+         * @{
+         */
+
+              /**
+               * @brief UART Databit type definitions
+               */
+              typedef enum {
+	              UART_DATABIT_5		= 0,     	/*!< UART 5 bit data mode */
+	              UART_DATABIT_6,		     			/*!< UART 6 bit data mode */
+	              UART_DATABIT_7,		     			/*!< UART 7 bit data mode */
+	              UART_DATABIT_8		     			/*!< UART 8 bit data mode */
+              } UART_DATABIT_Type;
+
+              /********************************************************************//**
+              * @brief UART Configuration Structure definition
+              **********************************************************************/
+              typedef struct {
+                uint32_t Baud_rate;   		    /**< UART baud rate */
+                UART_PARITY_Type Parity;    	/**< Parity selection, should be:
+							                                 - UART_PARITY_NONE: No parity
+							                                 - UART_PARITY_ODD: Odd parity
+							                                 - UART_PARITY_EVEN: Even parity
+							                                 - UART_PARITY_SP_1: Forced "1" stick parity
+							                                 - UART_PARITY_SP_0: Forced "0" stick parity
+							                                 */
+                UART_DATABIT_Type Databits;   /**< Number of data bits, should be:
+							                                 - UART_DATABIT_5: UART 5 bit data mode
+							                                 - UART_DATABIT_6: UART 6 bit data mode
+							                                 - UART_DATABIT_7: UART 7 bit data mode
+							                                 - UART_DATABIT_8: UART 8 bit data mode
+							                                 */
+                UART_STOPBIT_Type Stopbits;   /**< Number of stop bits, should be:
+							                                 - UART_STOPBIT_1: UART 1 Stop Bits Select
+							                                 - UART_STOPBIT_2: UART 2 Stop Bits Select
+							                                 */
+              } UART_CFG_Type;
+              
+        /**
+         * @}
+         */
+         
+        /** @defgroup UART_Public_Functions UART Public Functions
+         * @{
+         */
+
+        /**
+         * @}
+         */
+     
+    #ifdef __cplusplus
+    }
+    #endif
+            
+    /**
+     * @}
+     */
+ 
+/*--------------------------------- End Of File ------------------------------*/
+ 
+<------------------------From lpc17xx_uart.c----------------------------------->
+/**
+ *  @file 
+ *  @brief
+ *  @version
+ *  @date
+ *  @author
+ *  <COPYRIGHT NOTICE AND/OR LICENCE TERMS>
+ */
+   
+   /** @addtogroup UART
+    * @{
+    */
+    
+          /**
+           * @brief		        Determines best dividers to get a target clock rate
+           * @param[in]	UARTx	Pointer to selected UART peripheral, should be:
+           * 				          - LPC_UART0: UART0 peripheral
+           * 				          - LPC_UART1: UART1 peripheral
+           * 				          - LPC_UART2: UART2 peripheral
+           * 				          - LPC_UART3: UART3 peripheral
+           * @param[in]	baudrate Desired UART baud rate.
+           * @return 		      Error status, could be:
+           * 				          - SUCCESS
+           * 				          - ERROR
+           */
+          
+          /** @addtogroup UART_Public_Functions
+           * @{
+           */
+          
+           /**
+            * @}
+            */
+
+   /**
+    * @}
+    */
+    
+/*--------------------------------- End Of File ------------------------------*/

@@ -1,0 +1,30 @@
+CREATING A NEW REPO
+ 
+ Create a new repository on the command line
+
+    echo "# MyCodes" >> README.md
+    git init
+    git add README.md / git add *
+    git commit -m "first commit"
+    git remote add origin https://github.com/balajikvt/MyCodes.git
+    git push -u origin master
+
+ …or push an existing repository from the command line
+
+    git remote add origin https://github.com/balajikvt/MyCodes.git
+    git push -u origin master
+
+
+MAKING A COMMIT
+
+ git add *
+ git status
+ git commit -m "Commit message"
+ git push -u origin master
+
+
+
+Refer:
+https://gist.github.com/mindplace/b4b094157d7a3be6afd2c96370d39fad
+https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+

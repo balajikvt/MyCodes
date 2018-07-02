@@ -1,0 +1,16 @@
+Refn.: https://opensourceforu.com/2018/06/debugging-your-programs-from-printf-to-gdb/
+
+Debugging using GDB
+
+gdb <path to executable>
+(or)
+gdb
+(gdb) file <path to executable>
+
+In gdb context
+r - start/run/restart
+b - add breakpoint
+d - delete breakpoint
+p - print value if in scope
+c - continue
+
