@@ -11,8 +11,8 @@
 CC=gcc
 CFLAGS=-Wall
 SRCDIR=./src
-OBJ=<_>.o
-EXE=<_>
+OBJ=histogram.o
+EXE=histogram
 
 %.o: $(SRCDIR)/%.c
 	$(CC) -g -Wall -c -o $@ $< $(CFLAGS)

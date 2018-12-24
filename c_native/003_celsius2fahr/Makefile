@@ -11,11 +11,11 @@
 CC=gcc
 CFLAGS=-Wall
 SRCDIR=./src
-OBJ=<_>.o
-EXE=<_>
+OBJ=celsius2fahr.o
+EXE=celsius2fahr
 
 %.o: $(SRCDIR)/%.c
-	$(CC) -g -Wall -c -o $@ $< $(CFLAGS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 all: $(OBJ)
 	$(CC) $^ -o $(EXE)

@@ -11,8 +11,8 @@
 CC=gcc
 CFLAGS=-Wall
 SRCDIR=./src
-OBJ=<_>.o
-EXE=<_>
+OBJ=clk_test.o
+EXE=clk_test
 
 %.o: $(SRCDIR)/%.c
 	$(CC) -g -Wall -c -o $@ $< $(CFLAGS)

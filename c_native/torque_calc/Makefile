@@ -11,8 +11,8 @@
 CC=gcc
 CFLAGS=-Wall
 SRCDIR=./src
-OBJ=<_>.o
-EXE=<_>
+OBJ=torque_calc.o
+EXE=torque_calc
 
 %.o: $(SRCDIR)/%.c
 	$(CC) -g -Wall -c -o $@ $< $(CFLAGS)

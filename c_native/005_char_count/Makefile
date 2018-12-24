@@ -11,11 +11,11 @@
 CC=gcc
 CFLAGS=-Wall
 SRCDIR=./src
-OBJ=<_>.o
-EXE=<_>
+OBJ=char_count.o
+EXE=char_count
 
 %.o: $(SRCDIR)/%.c
-	$(CC) -g -Wall -c -o $@ $< $(CFLAGS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 all: $(OBJ)
 	$(CC) $^ -o $(EXE)
